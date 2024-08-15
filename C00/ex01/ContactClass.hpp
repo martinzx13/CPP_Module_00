@@ -19,10 +19,11 @@ public:
         this->nickname = getInput("nickname       : ");
         this->phone_number = getInput("phone number   : ");
         this->darkest_secret = getInput("darkest secret : ");
+        std::cout << "Contact created successfully" << std::endl;
     }
 
 private:
-    std::string getInput(const std::string &prompt)
+    std::string getInput(const std::string& prompt)
     {
         std::string input;
         do
@@ -30,11 +31,8 @@ private:
             std::cout << prompt;
             std::getline(std::cin, input);
             if (input.empty())
-            {
-                std::cout << "please fill all the data before move : " << std::endl;
-            }
-        }
-        while(input.empty());
+                std::cout << "Input Error : Please enter a value, can not be empty" << std::endl;
+        } while (input.empty());
         return (input);
     }
 };
