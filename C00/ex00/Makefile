@@ -1,7 +1,7 @@
 #makefile Creation.
 
 CC := g++
-CC_FLAGS := -g -Wall -Wextra -Werror
+CC_FLAGS:= -Wall -Wextra -Werror -std=c++98 -pedantic
 NAME := megaphone
 
 #Get the Src code.

@@ -1,23 +1,25 @@
 #include "library.h"
 
-int main(int argc, char *argv[])
+
+int main()
 {
-    Contact contact;
+    PhoneBook phonebook;
 
-    std::string str;
+    std::string command;
 
-    do{
-        std::cout << "Please enter a comand to continue : ";
-        std::getline(std::cin, str);
-        if (str.compare("ADD") == 0)
-            contact.createContact();
-        else if (str.compare("SEARCH") == 0)
-            std::cout << "fail" << std::endl;
+    while(true)
+    {
+        std::cout << "Please enter a command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, command);
+        if (command == "ADD")
+            phonebook.addContact();
+        else if (command == "SEARCH")
+        {
+            phonebook.searchContact();
+        }
+        else if (command == "EXIT")
+            break;
         else
-            std::cout << "The program only accepts ADD, SEARCH and EXIT " << std::endl;
+            std::cout << "Invalid command : Please enter ADD - SEARCH or EXIT" << std::endl;
     }
-    while (str.compare("EXIT") != 0);
-
 }
-
-
